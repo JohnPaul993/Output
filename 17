@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int prod, num;
+    int x[10]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 0,};
+    cout << "Enter Number: ";
+    cin  >> num;
+    prod = num*5;
+    cout << "The Product is:"<<prod;
+    return 0;
+    
+}
