@@ -1,0 +1,110 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int PT, OT, TD, Error, MSR, ITW, RPH, Late, MC, Hworked, Gpay,
+Npay, SSS, PAGIBIG, Permanent, Temporary;
+
+char Enumber[10];
+char Ename[25];
+char Eaddress[10];
+char Eposition[10];
+char Age[10];
+char Status[10];
+
+cout<<"\n\tINTEGRITY's COMPANY";
+cout<<"\n\t------------------";
+cout<<"\n\nChoose if the Employee is Permanent or Temporary";
+cout<<"\n\n[1 = Permanent, 2 = Temporary)";
+cout<<"\n\nEnter number:";
+cin>>PT;
+switch (PT)
+{
+case 1: {Permanent=1;
+cout<<Permanent;
+cout<<"\nEmployee Type: Permanent\n";
+cout<<"\nEmployee Number:";
+cin >> Enumber;
+cout<<"\nEmployee Name:";
+cin >> Ename;
+cout<<"\nEmployee Position:";
+cin >> Eposition;
+cout<<"\nEmployee Address:";
+cin >> Eaddress;
+cout<<"\nAge:";
+cin >> Age;
+cout<<"\nStatus:";
+cin >> Status;
+Hworked = 200;
+ITW     = 10;
+MSR     = 20000;
+MC      = 100;
+PAGIBIG = 100;
+OT      = 200;
+Late    = 30;
+RPH     = 50;
+cout<<"\n\nNo of Hours Worked:"<<Hworked;
+cout<<"\n\nMonthly Salary Rate:"<<MSR;
+Gpay = (Hworked*RPH) + OT;
+cout<<"\n\nEnter C to Compute:";
+cin >>TD>>SSS>>PAGIBIG>>ITW>>MC>>Late;
+cout <<"\n\nGross Pay:"<<Gpay;
+TD   = SSS+PAGIBIG+ITW+MC+Late;
+Npay = Gpay-TD;
+cout <<"\n\nTotal Deduction:" <<TD;
+cout <<"\n\nNet Pay:" <<Npay;
+break;
+}
+case 2: {Temporary=2;
+cout<<Temporary;
+cout<<"\nEmployee Type: Temporary\n";
+cout<<"\nEmployee Number:";
+cin >>Enumber;
+cout<<"\nEmployee Name:";
+cin >>Ename;
+cout<<"\nEmployee Position:";
+cin >>Eposition;
+cout<<"\nAge:";
+cin >>Age;
+cout<<"\nStatus:";
+cin >>Status;
+Hworked =200;
+ITW     =10;
+MSR     =20000;
+MC      =100;
+PAGIBIG =100;
+OT      =150;
+Late    =30;
+RPH     =45;
+cout<<"\n\nNo of Hours Worked: "<<Hworked;
+cout<<"\n\nMonthly Salary Rate: "<<MSR;
+Gpay = (Hworked*RPH) + OT;
+cout<<"\n\nEnter C to Compute:";
+cin>>TD>>SSS>>PAGIBIG>>ITW>>MC>>Late;
+cout<<"\n\nGross Pay: "<<Gpay;
+TD<<SSS<<PAGIBIG<<ITW<<MC<<Late;
+Npay = Gpay-TD;
+cout<<"\n\nTotal Deduction: "<<TD;
+cout<<"\n\nNet Pay: "<<Npay;
+break;
+case 3: {Error=3; cout<<"\nError!!!";
+break;
+case 4: {Error=4; cout<<"\nError!!!";
+break;
+case 5: {Error=5; cout<<"\nError!!!";
+break;
+case 6: {Error=6; cout<<"\nError!!!";
+break;
+case 7: {Error=7; cout<<"\nError!!!";
+break;
+case 8: {Error=8; cout<<"\nError!!!";
+break;
+case 9: {Error=9; cout<<"\nError!!!";
+cout<<"/nError!!!";
+cout<<Error;
+break;
+}}}}}}}}
+return 0;
+}
+}
