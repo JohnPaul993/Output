@@ -1,0 +1,66 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+// Declare global variables
+int empnum, hrswork, hrsrate, totded, gpay, npay, sss, philhealth, pagibig, late;
+char empname[50], position[15];
+
+// Function to calculate deductions
+int deduction() {
+    cout << "\nEnter SSS deduction: "; 
+    cin >> sss;
+    cout << "Enter PhilHealth deduction: "; 
+    cin >> philhealth;
+    cout << "Enter Pag-IBIG deduction: "; 
+    cin >> pagibig;
+    cout << "Enter late deduction: "; 
+    cin >> late;
+
+    totded = sss + philhealth + pagibig + late;
+
+    cout << "\nTotal Deduction: " << totded;
+    return totded;
+}
+
+// Function to calculate gross pay
+int grosspay() {
+    cout << "\nHours Worked: "; 
+    cin >> hrswork;
+    cout << "Hourly Rate: "; 
+    cin >> hrsrate;
+
+    gpay = hrswork * hrsrate;
+    cout << "\nGross Pay: " << gpay;
+    return gpay;
+}
+
+// Function to calculate net pay
+int netpay() {
+    npay = gpay - totded;
+
+    cout << "\nNet Pay: " << npay;
+    return npay;
+}
+
+int main(){
+
+// Input employee details
+cout << "Employee No: "; 
+cin >> empnum;
+cout << "Employee Name: "; 
+cin >> empname;  // Will only accept a single word (no spaces)
+cout << "Position: "; 
+cin >> position;  // Will only accept a single word (no spaces)
+
+
+    // Call functions for deductions and pay calculations
+    grosspay();
+    deduction();
+    netpay();
+
+    return 0;
+}
+
