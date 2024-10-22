@@ -1,0 +1,102 @@
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+
+using namespace std;
+
+char ename[50];
+char eadd[50];
+char pos[15];
+int id;
+int hrw, rate, pagibig, philhealth, sss, ca, gross, net;
+int totded, ot, ot_hr, ot_rate;
+
+void getEmployee() {
+    cout << "\n==== Enter Employee Information ====" << endl;
+    cout << "Employee ID: ";
+    cin >> id;
+    cout << "Employee Name: ";
+    cin.ignore();
+    cin.getline(ename, 50);
+    cout << "Employee Address: ";
+    cin.getline(eadd, 50);
+    cout << "Position: ";
+    cin.getline(pos, 15);
+}
+
+void getWorkhr() {
+    cout << "\n==== Working Hours Information ====" << endl;
+    cout << "Hours Worked: ";
+    cin >> hrw;
+    cout << "Hourly Rate: ";
+    cin >> rate;
+    cout << "Overtime Hours: ";
+    cin >> ot_hr;
+    cout << "Overtime Rate: ";
+    cin >> ot_rate;
+
+    gross = hrw * rate;
+    ot = ot_hr * ot_rate;
+    gross += ot;
+}
+
+void getDeduction() {
+    cout << "\n==== Deduction Information ====" << endl;
+    cout << "Philhealth Deduction: ";
+    cin >> philhealth;
+    cout << "Pagibig Deduction: ";
+    cin >> pagibig;
+    cout << "SSS Deduction: ";
+    cin >> sss;
+    cout << "Cash Advance: ";
+    cin >> ca;
+
+    totded = philhealth + pagibig + sss + ca;
+    net = gross - totded;
+}
+
+void payrollSummary() {
+    cout << "\n==== Payroll Summary ====" << endl;
+    cout << "Employee ID: " << id << endl;
+    cout << "Employee Name: " << ename << endl;
+    cout << "Employee Address: " << eadd << endl;
+    cout << "Employee Position: " << pos << endl;
+    cout << "Gross Pay: " << gross << endl;
+    cout << "Total Deductions: " << totded << endl;
+    cout << "Net Pay: " << net << endl;
+}
+
+int main() {
+    int choice;
+    do {
+        cout << "\n==== Payroll System Menu ====" << endl;
+        cout << "1) Employee Record" << endl;
+        cout << "2) Working Hours" << endl;
+        cout << "3) Calculate Deductions" << endl;
+        cout << "4) Payroll Summary" << endl;
+        cout << "Enter your choice [1-4]: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                getEmployee();
+                break;
+            case 2:
+                getWorkhr();
+                break;
+            case 3:
+                getDeduction();
+                break;
+            case 4:
+                payrollSummary();
+                break;
+            default:
+                cout << "Invalid choice! Please select again." << endl;
+        }
+        cout << "\nDo you want to perform another operation? (1 = Yes / 0 = No): ";
+        cin >> choice;
+
+    } while (choice != 0);
+
+    return 0;
+}
