@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    cout << "*****************************************" << endl;
+    cout << "*           Hands on Quiz # 3           *" << endl;
+    cout << "*        Name of Students:              *" << endl;
+    cout << "*        Brovig B. Castillo             *" << endl;
+    cout << "*        Ramon Gabriel Tizon            *" << endl;
+    cout << "*****************************************" << endl;
+
+    int grade;
+    cout << "\nEnter grade: ";
+    cin >> grade;
+
+    if (grade >= 95 && grade <= 100) {
+        cout << "\nYour Grade is A+" << endl;
+    } else if (grade >= 90 && grade < 95) {
+        cout << "\nYour Grade is A" << endl;
+    } else if (grade >= 85 && grade < 90) {
+        cout << "\nYour Grade is B+" << endl;
+    } else if (grade >= 80 && grade < 85) {
+        cout << "\nYour Grade is B" << endl;
+    } else if (grade >= 75 && grade < 80) {
+        cout << "\nYour Grade is C" << endl;
+    } else {
+        cout << "\nYour Grade is D" << endl;
+    }
+
+    cout << "*****************************************" << endl;
+    cout << "*        Presented to:                  *" << endl;
+    cout << "*        Mr. Gibson J. Olazo            *" << endl;
+    cout << "*                 Teacher               *" << endl;
+    cout << "*****************************************" << endl;
+    return 0;
+}
